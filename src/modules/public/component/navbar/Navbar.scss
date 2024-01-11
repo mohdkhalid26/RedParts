@@ -1,0 +1,83 @@
+.navbar{
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 43%;
+    height: 92px;
+    .navbar-left-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 52px;
+        span{
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 18px;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+    .navbar-center-div{
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 9.2px;
+        width: 25%;
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                cursor: pointer;
+                font-family: 'Bagel Fat One', system-ui;
+        font-size: 43px;
+        font-weight: 900;
+    }
+    .red{
+        color: red;
+    }
+    .parts{
+        color: black;
+    }
+    width: 100%;
+    input{
+        text-align: center;
+    background-color: whitesmoke;
+        border: none;
+        border-radius: 25px;
+        border-bottom: 1px solid black;
+        width: 100%;
+        font-size: 18px;
+        padding: 7px;
+        &:focus{
+            outline: none;
+        }
+    }
+        }
+    }
+    .navbar-right-div{
+        gap: 52px;
+display: flex;
+align-items: center;
+justify-content: center;
+span{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    &:hover{
+                color: red;
+            }
+}
+.admin-icon, .cart-icon{
+    font-size: 34px;
+}
+    }
+}
