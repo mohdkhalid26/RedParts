@@ -1,7 +1,7 @@
 .navbar{
+    z-index: 1;
     background-color: whitesmoke;
-    border-bottom: 1px solid black;
-    position: relative;
+    position: fixed;
     width: 100%;
     display: flex;
     align-items: center;
@@ -14,6 +14,9 @@
         justify-content: center;
         gap: 52px;
         span{
+        user-select: none;
+        -webkit-user-select: none;
+  -ms-user-select: none;
             font-weight: 700;
             cursor: pointer;
             font-size: 18px;
@@ -29,13 +32,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 9.2px;
+        gap: 16px;
         width: 25%;
-        div{
+        div, h1{
             display: flex;
             align-items: center;
             justify-content: center;
             span{
+        user-select: none;
+        -webkit-user-select: none;
+  -ms-user-select: none;
                 cursor: pointer;
                 font-family: 'Bagel Fat One', system-ui;
         font-size: 43px;
@@ -48,12 +54,12 @@
         color: black;
     }
     width: 100%;
+    
     input{
         text-align: center;
     background-color: whitesmoke;
         border: none;
-        border-radius: 25px;
-        border-bottom: 1px solid black;
+        border-radius: 180px;
         width: 100%;
         font-size: 18px;
         padding: 7px;
@@ -69,6 +75,9 @@ display: flex;
 align-items: center;
 justify-content: center;
 span{
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
     cursor: pointer;
     font-size: 18px;
     font-weight: 700;

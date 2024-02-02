@@ -1,0 +1,31 @@
+.header{
+    width: 100%;
+    min-height: 86vh;
+    background-image: linear-gradient(rgba(70, 70, 70, 0.70),
+    rgba(70, 70, 70, 0.70)),url("../../assets/finder.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+        margin-top: 5%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        h2{
+            font-size: 52px;
+            color: white;
+            font-weight: 500;
+        }
+        p{
+            color: white;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+}
