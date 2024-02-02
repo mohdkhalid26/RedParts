@@ -13,6 +13,9 @@
     align-items: center;
     justify-content: flex-start;
     overflow-x: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
   }
   img {
     height: 180px;
