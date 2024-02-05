@@ -15,8 +15,8 @@ function Header() {
   return (
     <div className='header'>
 <div>
-<h2>Find Parts For Your Vehicle{first}</h2>
-<p>Over hundreds of brands and tens of thousands of parts{second}</p>
+<h2>Find Parts For Your Vehicle</h2>
+<p>Over hundreds of brands and tens of thousands of parts</p>
 </div>
     </div>
   )

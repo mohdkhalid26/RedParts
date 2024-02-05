@@ -1,5 +1,5 @@
 .navbar{
-    z-index: 1;
+    z-index: 7;
     background-color: whitesmoke;
     position: fixed;
     width: 100%;
@@ -13,7 +13,7 @@
         align-items: center;
         justify-content: center;
         gap: 52px;
-        span{
+        .navbar-span{
         user-select: none;
         -webkit-user-select: none;
   -ms-user-select: none;
@@ -47,10 +47,10 @@
         font-size: 43px;
         font-weight: 900;
     }
-    .red{
+    .navbar-red{
         color: red;
     }
-    .parts{
+    .navbar-parts{
         color: black;
     }
     width: 100%;
@@ -85,7 +85,7 @@ span{
                 color: red;
             }
 }
-.admin-icon, .cart-icon{
+.navbar-admin-icon, .navbar-cart-icon{
     font-size: 34px;
 }
     }

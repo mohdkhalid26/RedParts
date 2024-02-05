@@ -17,18 +17,18 @@ function Navbar() {
     <div className='navbar'>
 
 <div className="navbar-left-div">
-  <span>HOME</span>
-  <span>ABOUT</span>
-  <span>CONTACT</span>
+  <span className='navbar-span'>HOME</span>
+  <span className='navbar-span'>ABOUT</span>
+  <span className='navbar-span'>CONTACT</span>
 </div>
 <div className="navbar-center-div">
-  <h1 className="heading-div"><span className='red'>RED</span><span className='parts'>PARTS</span></h1>
-  <div className="input-div"><input type="text" placeholder='SEARCH CATEGORIES' /></div>
+  <h1 className="navbar-heading-div"><span className='navbar-red'>RED</span><span className='navbar-parts'>PARTS</span></h1>
+  <div className="navbar-input-div"><input type="text" placeholder='SEARCH PRODUCTS' /></div>
 </div>
 <div className="navbar-right-div">
   <span>CATEGORIES &#9660;</span>
-  <span className='cart-icon'><FaOpencart /></span>
-  <span className='admin-icon'><RiAdminLine /></span>
+  <span className='navbar-cart-icon'><FaOpencart /></span>
+  <span className='navbar-admin-icon'><RiAdminLine /></span>
   </div>
 
     </div>

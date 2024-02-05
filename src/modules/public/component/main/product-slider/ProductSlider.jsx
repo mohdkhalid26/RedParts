@@ -1,6 +1,8 @@
-import "./Slider.scss";
-import { useEffect, useRef, useState } from "react";
-function Slider() {
+import React,{ useEffect, useRef, useState } from "react";
+import "./ProductSlider.scss"
+
+function ProductSlider() {
+    
   const imagesRef = useRef();
   let conRef = useRef(true);
   const [conRight, SetConRight] = useState(true);
@@ -8,56 +10,56 @@ function Slider() {
   const [timeOut, SetTimeOut] = useState(null);
   const [funcOut, SetFuncOut] = useState(null);
   const [scrollVal, SetScrollVal] = useState(0);
-  const [images] = useState([
+  const [products, SetProducts] = useState([
     {
+        rate:"(499 INR)",
+      category: "one",
+      name: "abcdef ghijkl",
       img: "https://tse2.mm.bing.net/th?id=OIP.rQfjNU7I1vu4rkTIVIjo4QHaHa&pid=Api&P=0&h=180",
     },
     {
+        rate:"(499 INR)",
+      category: "one",
+      name: "bcdefa hijklg",
       img: "https://tse3.mm.bing.net/th?id=OIP.BU8oZa8tjDtujhZ6Lg4ptgHaHa&pid=Api&P=0&h=180",
     },
     {
+        rate:"(499 INR)",
+      category: "two",
+      name: "cdefab ijklgh",
       img: "https://tse2.mm.bing.net/th?id=OIP.SP5-nQIZlOxP_h9Des6DDAHaHa&pid=Api&P=0&h=180",
     },
     {
+        rate:"(499 INR)",
+      category: "two",
+      name: "defabc jklghi",
       img: "https://tse2.mm.bing.net/th?id=OIP.BK6NQWcIA5Ko8FLiDo12tgHaHa&pid=Api&P=0&h=180",
     },
     {
+        rate:"(499 INR)",
+      category: "three",
+      name: "bcdefa ghijkl",
       img: "https://tse2.mm.bing.net/th?id=OIP.rQfjNU7I1vu4rkTIVIjo4QHaHa&pid=Api&P=0&h=180",
     },
     {
+        rate:"(499 INR)",
+      category: "three",
+      name: "cdefab hijklg",
       img: "https://tse3.mm.bing.net/th?id=OIP.BU8oZa8tjDtujhZ6Lg4ptgHaHa&pid=Api&P=0&h=180",
     },
     {
-      img: "https://tse2.mm.bing.net/th?id=OIP.SP5-nQIZlOxP_h9Des6DDAHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse2.mm.bing.net/th?id=OIP.BK6NQWcIA5Ko8FLiDo12tgHaHa&pid=Api&P=0&h=180",
-    },{
+        rate:"(499 INR)",
+      category: "four",
+      name: "abcdef ijklgh",
       img: "https://tse2.mm.bing.net/th?id=OIP.rQfjNU7I1vu4rkTIVIjo4QHaHa&pid=Api&P=0&h=180",
     },
     {
+        rate:"(499 INR)",
+      category: "four",
+      name: "defabc jklghi",
       img: "https://tse3.mm.bing.net/th?id=OIP.BU8oZa8tjDtujhZ6Lg4ptgHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse2.mm.bing.net/th?id=OIP.SP5-nQIZlOxP_h9Des6DDAHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse2.mm.bing.net/th?id=OIP.BK6NQWcIA5Ko8FLiDo12tgHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse2.mm.bing.net/th?id=OIP.rQfjNU7I1vu4rkTIVIjo4QHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse3.mm.bing.net/th?id=OIP.BU8oZa8tjDtujhZ6Lg4ptgHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse2.mm.bing.net/th?id=OIP.SP5-nQIZlOxP_h9Des6DDAHaHa&pid=Api&P=0&h=180",
-    },
-    {
-      img: "https://tse2.mm.bing.net/th?id=OIP.BK6NQWcIA5Ko8FLiDo12tgHaHa&pid=Api&P=0&h=180",
     },
   ]);
-
   function getScrollMaxVal() {
     let wid = imagesRef.current.clientWidth - imagesRef.current.scrollWidth;
     let posWid = wid * -1;
@@ -67,6 +69,8 @@ function Slider() {
     getScrollMaxVal();
   }, []);
   function funcLeft() {
+
+  
     let t = 60;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft <= 1) {
@@ -81,6 +85,7 @@ function Slider() {
     SetFuncOut({ func: funcLeft });
   }
   function funcRight() {
+    
     let t = 60;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft >= scrollVal - 1) {
@@ -101,28 +106,39 @@ function Slider() {
         setTimeout(() => {
           clearInterval(timeOut);
           funcRight();
-        }, 1000);
+        }, 500);
       } else {
         setTimeout(() => {
           clearInterval(timeOut);
           funcLeft();
-        }, 1000);
+        }, 500);
       }
     }
   }, [conLeft, conRight]);
+
   return (
-    <div
-      className="slider"
-      onMouseEnter={() => clearInterval(timeOut)}
+      <div
+      onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
+      onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseLeave={() => funcOut !== null ? funcOut.func():""}
-    >
-      <div ref={imagesRef} className="images">
-        {images?.map((i, index) => {
-          return <img key={index} src={i.img} alt="" />;
-        })}
+      ref={imagesRef}
+      className="selected-categories-products">
+        {
+            products?.map((d,i)=>{
+                return(
+<div key={i} className="product">
+<img className="product-img" src={d.img} alt="img"/>
+<div className="product-details-div">
+
+<span className="product-name-span">{d.name}</span>
+<span className="product-rate-span">{d.rate}</span>
+</div>
+</div>
+                )
+            })
+        }
       </div>
-    </div>
   );
 }
 
-export default Slider;
+export default ProductSlider;
