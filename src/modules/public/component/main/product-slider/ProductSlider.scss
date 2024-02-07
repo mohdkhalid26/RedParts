@@ -43,11 +43,13 @@ justify-content: flex-start;
 flex-direction: column;
 gap: 7px;
               .product-name-span{
+                font-family: 'Bagel Fat One', system-ui;
                   font-size: 25px;
                   color: red;
               }
               .product-rate-span{
                   font-size: 18;
+                  font-weight: 900;
               }
           }
       }
