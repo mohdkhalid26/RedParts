@@ -1,8 +1,36 @@
 .footer{
+    width: 100%;
+    background-color: whitesmoke;
+    min-height: 52vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    background-color: palegreen;
+    flex-wrap: wrap;
+    padding: 7px;
+    .first{
+        width: 50%;
+        background-color: palegreen;
+        min-height: 34vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .sec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        background-color: palevioletred;
+        min-height: 34vh;
+    }
+    .third{
+    min-height: 16vh;
+        background-color: paleturquoise;
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
