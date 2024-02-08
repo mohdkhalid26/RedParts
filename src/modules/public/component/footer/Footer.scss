@@ -1,32 +1,83 @@
 .footer{
+    min-height: 81vh;
     width: 100%;
     background-color: whitesmoke;
-    min-height: 52vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 7px;
+    justify-content: space-between;
+    flex-direction: column;
     .first{
-        width: 50%;
-        background-color: palegreen;
-        min-height: 34vh;
+        width: 100%;
         display: flex;
+        align-items: center;
+        justify-content: flex-start;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        min-height: 65vh;
+        .about{
+            min-height: 65vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 25px;
+            h3{
+                color: red;
+                width: 100%;
+                font-size: 34px;
+                font-weight: 900;
+                text-decoration: underline;
+                text-align: center;
+            }
+                p{
+                    padding: 4px;
+                    text-align: center;
+                    width: 100%;
+font-size: 18px;
+font-weight: 400;
+                }
+                iframe{
+                    min-height: 34vh;
+                    width: 100%;
+                    border: none;
+                    filter: invert(92%);
+                }
     }
-    .sec{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        background-color: palevioletred;
-        min-height: 34vh;
-    }
+}
+    // .sec{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: flex-start;
+    //     flex-direction: column;
+    //     width: 50%;
+    //     min-height: 52vh;
+    //     .contact{
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: flex-start;
+    //         flex-direction: column;
+    //         h3{
+    //             margin-bottom: 25px;
+    //             text-align: center;
+    //             font-size: 34px;
+    //             font-weight: 900;
+    //             color: red;
+    //             text-decoration: underline;
+    //             width: 100%;
+    //         }
+    //         p{
+    //             width: 100%;
+    //             font-size: 18px;
+    //             font-weight: 400;
+    //             text-align: center;
+    //         }
+    //     }
+        
+        
+    // }
     .third{
     min-height: 16vh;
-        background-color: paleturquoise;
+    border-top: 2px solid red;
         width: 100%;
         
         display: flex;

@@ -15,7 +15,7 @@
       }
       .product{
           min-width: 290px;
-          
+          cursor: pointer;
           border-radius: 25px 25px 0px 0px;
           display: flex;
           align-items: center;
@@ -49,8 +49,8 @@ gap: 7px;
                   color: red;
               }
               .product-rate-span{
-                  font-size: 18;
-                  font-weight: 900;
+                  font-size: 18px;
+                  font-weight: 400;
               }
           }
       }
