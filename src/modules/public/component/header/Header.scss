@@ -21,8 +21,16 @@
             font-size: 52px;
             color: white;
             font-weight: 500;
+            
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
         }
         p{
+            
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
             color: white;
             font-size: 18px;
             font-weight: 400;

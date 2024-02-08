@@ -11,5 +11,9 @@
         font-size: 34px;
         font-weight: 900;
         text-decoration: underline;
+        
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
     }
 }

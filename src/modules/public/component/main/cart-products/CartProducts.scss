@@ -8,6 +8,10 @@
   flex-direction: column;
   gap: 25px;
   .cart-products-h3 {
+    
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
     font-size: 34px;
     font-weight: 900;
     text-decoration: underline;
@@ -58,11 +62,18 @@ cursor: pointer;
         flex-direction: column;
         gap: 7px;
         .cart-product-name {
+          
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
           font-size: 25px;
           color: red;
           font-family: 'Bagel Fat One', system-ui;
         }
         .cart-product-rate {
+          user-select: none;
+          -webkit-user-select: none;
+      -ms-user-select: none;
           font-size: 18px;
           font-weight: 400;
         }
