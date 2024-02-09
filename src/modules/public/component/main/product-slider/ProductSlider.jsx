@@ -124,9 +124,19 @@ function ProductSlider() {
     }
   }, [conLeft, conRight]);
 
+  function touchStartFunc() {
+    if (timeOut !== null) {
+      clearInterval(timeOut)
+      setTimeout(() => {
+        if (funcOut !== null) {
+          funcOut.func()
+        }
+      }, 2500);
+    }
+  }
   return (
       <div
-      onTouchStart={() => timeOut !== null ? clearInterval(timeOut):""}
+      onTouchStart={() => touchStartFunc()}
       onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseLeave={() => funcOut !== null ? funcOut.func():""}
