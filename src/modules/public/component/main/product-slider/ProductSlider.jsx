@@ -126,7 +126,9 @@ function ProductSlider() {
 
   return (
       <div
-      onTouchCancel={() => funcOut !== null ? funcOut.func():""}
+      onTouchEnd={() => funcOut !== null ? setTimeout(() => {
+        funcOut.func()
+      }, 1000):""}
       onTouchStart={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
