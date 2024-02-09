@@ -130,6 +130,7 @@ function ProductSlider() {
       onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseLeave={() => funcOut !== null ? funcOut.func():""}
+      onMouseOut={() => funcOut !== null ? funcOut.func():""}
       ref={imagesRef}
       className="selected-categories-products">
         {
