@@ -26,16 +26,6 @@ function Footer() {
         ></iframe>
       </div>
       </div>
-      {/* <div className="sec">
-        <div className="contact">
-          <h3>CONTACT</h3>
-<p>Address: Prayagraj,UttarPradesh,India</p>
-<p>
-Phone: +918318110273</p>
-<p>
-Email: mohdkhalid211016@gmail.com</p>
-        </div>
-      </div> */}
       <div className="third">t</div>
     </div>
   );
