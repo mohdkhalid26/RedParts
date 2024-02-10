@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.scss";
+import { IoIosCall } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
 
 function Footer() {
   return (
@@ -26,7 +28,30 @@ function Footer() {
         ></iframe>
       </div>
       </div>
-      <div className="third">t</div>
+      <div className="sec">
+
+<div className="contact">
+  <div className="con">
+    <span className="num">Phone: +918303388143</span>
+    <span className="add">Address: Prayagraj,UttarPradesh,India</span>
+  </div>
+  <div className="copy-right"><div className="icons">
+<a target="_blank" href="tel:+918303388143">
+
+<IoIosCall />
+</a>
+<a target="_blank" href="https://maps.app.goo.gl/uAhx2sL7LbuoMKJe6">
+
+<IoLocationSharp />
+</a>
+
+  </div>
+  <span>&copy; 2023 All Rights Reserved.</span> 
+  </div>
+ 
+</div>
+
+      </div>
     </div>
   );
 }
