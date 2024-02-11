@@ -123,22 +123,11 @@ function ProductSlider() {
       }
     }
   }, [conLeft, conRight]);
-  function touchScroll(params) {
-    if (timeOut !== null) {
-      clearInterval(timeOut)
-    setTimeout(() => {
-      if (funcOut !== null){
-      clearInterval(timeOut)
-      funcOut.func()
-      clearInterval(timeOut)
-      }
-    }, 2500);
-    }
-  }
+  
 
   return (
       <div
-      onTouchStart={() => touchScroll()}
+      onTouchStart={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseLeave={() => funcOut !== null ? funcOut.func():""}
