@@ -86,7 +86,7 @@ function ProductSlider() {
         SetConLeft(false);
         SetConRight(true);
       } else {
-        imagesRef.current.scrollLeft -= 0.50;
+        imagesRef.current.scrollLeft -= 0.75;
       }
     }, t);
     SetTimeOut(time);
@@ -123,10 +123,22 @@ function ProductSlider() {
       }
     }
   }, [conLeft, conRight]);
+  function touchScroll(params) {
+    if (timeOut !== null) {
+      clearInterval(timeOut)
+    setTimeout(() => {
+      if (funcOut !== null){
+      clearInterval(timeOut)
+      funcOut.func()
+      clearInterval(timeOut)
+      }
+    }, 2500);
+    }
+  }
 
   return (
       <div
-      onTouchStart={() => timeOut !== null ? clearInterval(timeOut):""}
+      onTouchStart={() => touchScroll()}
       onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseLeave={() => funcOut !== null ? funcOut.func():""}

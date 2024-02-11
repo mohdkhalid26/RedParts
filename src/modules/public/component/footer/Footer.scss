@@ -58,38 +58,52 @@
     .contact{
   min-height: 16vh;
       width: 100%;
+      // background-color: palegreen;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
       .con{
+        // background-color: darkcyan;
+        width: 50%;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        flex-direction: column;
+        // flex-direction: column;
         span{
+          // background-color:firebrick;
+          text-align: center;
+          width: 50%;
           font-size: 18px;
           font-weight: 400;
         }
       }
       .copy-right{
+        // background-color: darkgoldenrod;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
+        // flex-direction: column;
         gap: 1px;
         span{
-
+          // background-color: sandybrown;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-size: 18px;
           font-weight: 400;
         }
         .icons{
+          // background-color: violet;
+          width: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-  gap: 25px;
+  gap: 52px;
   a{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     font-size: 29px;
     text-decoration: none;
