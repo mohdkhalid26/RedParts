@@ -86,7 +86,7 @@ function ProductSlider() {
         SetConLeft(false);
         SetConRight(true);
       } else {
-        imagesRef.current.scrollLeft -= 0.75;
+        imagesRef.current.scrollLeft -= 0.80;
       }
     }, t);
     SetTimeOut(time);
