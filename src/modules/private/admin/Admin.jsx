@@ -2,7 +2,11 @@ import React from 'react'
 import "./Admin.scss"
 function Admin() {
   return (
-    <div>Admin</div>
+    <div className='admin'>
+
+
+      
+    </div>
   )
 }
 
