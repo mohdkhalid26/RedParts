@@ -25,6 +25,9 @@
     justify-content: center;
     flex-wrap: wrap;
     .cart-product {
+    user-select: none;
+    -webkit-user-select: none;
+-ms-user-select: none;
       min-width: 250px;
       border-radius: 25px;
       display: flex;
