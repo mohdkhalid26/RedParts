@@ -77,7 +77,7 @@ function ProductSlider() {
   useEffect(() => {
     getScrollMaxVal();
   }, []);
-  function funcLeft() {
+  function funcLeft(p) {
     for (let i = 0; i < allIntervals.length; i++) {
       clearInterval(allIntervals[i]);
     }
@@ -92,11 +92,16 @@ function ProductSlider() {
       }
     }, t);
     setAllIntervals([...allIntervals, time]);
-    setTimeOut(time);
-    setFuncOut({ func: funcLeft });
     setFuncOutMob({ func: funcLeft });
+    if (p === "mobile") {
+      setFuncOut(null);
+      setTimeOut(null);
+    } else {
+      setFuncOut({ func: funcLeft });
+      setTimeOut(time);
+    }
   }
-  function funcRight() {
+  function funcRight(p) {
     for (let i = 0; i < allIntervals.length; i++) {
       clearInterval(allIntervals[i]);
     }
@@ -112,9 +117,14 @@ function ProductSlider() {
     }, t);
 
     setAllIntervals([...allIntervals, time]);
-    setTimeOut(time);
-    setFuncOut({ func: funcRight });
     setFuncOutMob({ func: funcRight });
+    if (p === "mobile") {
+      setFuncOut(null);
+      setTimeOut(null);
+    } else {
+      setFuncOut({ func: funcRight });
+      setTimeOut(time);
+    }
   }
   useEffect(() => {
     if (conRef.current) {
@@ -135,6 +145,7 @@ function ProductSlider() {
 
   function touchFunc(touch) {
     if (touch === "touch start") {
+      console.log("start");
       for (let i = 0; i < allIntervals.length; i++) {
         clearInterval(allIntervals[i]);
       }
@@ -142,11 +153,12 @@ function ProductSlider() {
       setTimeOut(null);
     } else {
       setTimeout(() => {
+        console.log("end");
         for (let i = 0; i < allIntervals.length; i++) {
           clearInterval(allIntervals[i]);
         }
         if (funcOutMob !== null) {
-          funcOutMob.func();
+          funcOutMob.func("mobile");
         }
       }, 2500);
     }
