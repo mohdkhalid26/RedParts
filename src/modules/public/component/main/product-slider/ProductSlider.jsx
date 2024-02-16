@@ -145,15 +145,13 @@ function ProductSlider() {
 
   function touchFunc(touch) {
     if (touch === "touch start") {
-      console.log("start");
       for (let i = 0; i < allIntervals.length; i++) {
         clearInterval(allIntervals[i]);
       }
       setFuncOut(null);
       setTimeOut(null);
-    } else {
+    } else if (touch === "touch end") {
       setTimeout(() => {
-        console.log("end");
         for (let i = 0; i < allIntervals.length; i++) {
           clearInterval(allIntervals[i]);
         }
