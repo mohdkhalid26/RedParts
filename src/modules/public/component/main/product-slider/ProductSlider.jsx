@@ -146,7 +146,6 @@ const [funcOutMob, setFuncOutMob] = useState(null);
         for (let i = 0; i < allIntervals.length; i++) {
           clearInterval(allIntervals[i])
            }
-     setAllIntervals([])
         if (funcOutMob !== null) {
           funcOutMob.func()
         }
