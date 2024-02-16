@@ -79,8 +79,9 @@ const [funcOutMob, setFuncOutMob] = useState(null);
     getScrollMaxVal();
   }, []);
   function funcLeft() {
-
-  
+    for (let i = 0; i < allIntervals.length; i++) {
+      clearInterval(allIntervals[i])
+       }  
     let t = 40;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft <= 1) {
@@ -97,7 +98,9 @@ const [funcOutMob, setFuncOutMob] = useState(null);
     setFuncOutMob({ func: funcLeft });
   }
   function funcRight() {
-    
+    for (let i = 0; i < allIntervals.length; i++) {
+      clearInterval(allIntervals[i])
+       }
     let t = 40;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft >= scrollVal - 1) {
