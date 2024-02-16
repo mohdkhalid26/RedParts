@@ -7,10 +7,10 @@ import Home from './modules/public/page/home/Home';
 function App() {
   return (
     <div className="app">
-      {/* <Home/> */}
+      <Home/>
       {/* <Signup/> */}
       {/* <Login/> */}
-      <Admin/>
+      {/* <Admin/> */}
       </div>
   );
 }

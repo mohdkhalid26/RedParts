@@ -23,9 +23,9 @@ function formSubmit(e) {
 }
 
   return (    <div className='login'>
-  <form onSubmit={(e)=>formSubmit(e)}>
-  <input type="email" required onChange={(e)=>writeData(e)} value={formData.email} name='email'/>
-  <input type="text" required onChange={(e)=>writeData(e)} value={formData.password} name='password'/>
+  <form onSubmit={formSubmit}>
+  <input type="email" required onChange={writeData} value={formData.email} name='email'/>
+  <input type="text" required onChange={writeData} value={formData.password} name='password'/>
   <button type="submit">SUBMIT</button>
   </form>
   

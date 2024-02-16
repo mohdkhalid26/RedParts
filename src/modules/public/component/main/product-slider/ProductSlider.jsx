@@ -5,12 +5,13 @@ function ProductSlider() {
     
   const imagesRef = useRef();
   let conRef = useRef(true);
-  const [conRight, SetConRight] = useState(true);
-  const [conLeft, SetConLeft] = useState(false);
-  const [timeOut, SetTimeOut] = useState(null);
-  const [funcOut, SetFuncOut] = useState(null);
-  const [scrollVal, SetScrollVal] = useState(0);
-  const [products, SetProducts] = useState([
+const [allIntervals, setAllIntervals] = useState([]);
+  const [conRight, setConRight] = useState(true);
+  const [conLeft, setConLeft] = useState(false);
+  const [timeOut, setTimeOut] = useState(null);
+  const [funcOut, setFuncOut] = useState(null);
+  const [scrollVal, setScrollVal] = useState(0);
+  const [products, setProducts] = useState([
     {
       currency:"INR",
         rate:499,
@@ -71,7 +72,7 @@ function ProductSlider() {
   function getScrollMaxVal() {
     let wid = imagesRef.current.clientWidth - imagesRef.current.scrollWidth;
     let posWid = wid * -1;
-    SetScrollVal(posWid);
+    setScrollVal(posWid);
     }
   useEffect(() => {
     getScrollMaxVal();
@@ -83,14 +84,15 @@ function ProductSlider() {
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft <= 1) {
         conRef.current = true;
-        SetConLeft(false);
-        SetConRight(true);
+        setConLeft(false);
+        setConRight(true);
       } else {
-        imagesRef.current.scrollLeft -= 0.80;
+        imagesRef.current.scrollLeft -= 0.76;
       }
     }, t);
-    SetTimeOut(time);
-    SetFuncOut({ func: funcLeft });
+    setAllIntervals([...allIntervals,time])
+    setTimeOut(time);
+    setFuncOut({ func: funcLeft });
   }
   function funcRight() {
     
@@ -98,14 +100,16 @@ function ProductSlider() {
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft >= scrollVal - 1) {
         conRef.current = true;
-        SetConLeft(true);
-        SetConRight(false);
+        setConLeft(true);
+        setConRight(false);
       } else {
         imagesRef.current.scrollLeft += 1;
       }
     }, t);
-    SetTimeOut(time);
-    SetFuncOut({ func: funcRight });
+    
+    setAllIntervals([...allIntervals,time])
+    setTimeOut(time);
+    setFuncOut({ func: funcRight });
   }
   useEffect(() => {
     if (conRef.current) {
@@ -123,12 +127,26 @@ function ProductSlider() {
       }
     }
   }, [conLeft, conRight]);
-  
+
+  function touchFunc(touch) {
+    if (touch === "touch start") {
+     for (let i = 0; i < allIntervals.length; i++) {
+    clearInterval(allIntervals[i])
+     }
+     setAllIntervals([])
+    } else {
+      setTimeout(() => {
+        if (funcOut !== null) {
+          funcOut.func()
+        }
+      }, 2500);
+    }
+  }
 
   return (
       <div
-      onTouchEnd={() => funcOut !== null ? funcOut.func():""}
-      onTouchStart={() => timeOut !== null ? clearInterval(timeOut):""}
+      onTouchEnd={() => touchFunc("touch end")}
+      onTouchStart={() => touchFunc("touch start")}
       onMouseOver={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseEnter={() => timeOut !== null ? clearInterval(timeOut):""}
       onMouseLeave={() => funcOut !== null ? funcOut.func():""}
