@@ -6,6 +6,7 @@ function ProductSlider() {
   const imagesRef = useRef();
   let conRef = useRef(true);
 const [allIntervals, setAllIntervals] = useState([]);
+const [funcOutMob, setFuncOutMob] = useState(null);
   const [conRight, setConRight] = useState(true);
   const [conLeft, setConLeft] = useState(false);
   const [timeOut, setTimeOut] = useState(null);
@@ -93,6 +94,7 @@ const [allIntervals, setAllIntervals] = useState([]);
     setAllIntervals([...allIntervals,time])
     setTimeOut(time);
     setFuncOut({ func: funcLeft });
+    setFuncOutMob({ func: funcLeft });
   }
   function funcRight() {
     
@@ -110,6 +112,7 @@ const [allIntervals, setAllIntervals] = useState([]);
     setAllIntervals([...allIntervals,time])
     setTimeOut(time);
     setFuncOut({ func: funcRight });
+    setFuncOutMob({ func: funcRight });
   }
   useEffect(() => {
     if (conRef.current) {
@@ -133,11 +136,13 @@ const [allIntervals, setAllIntervals] = useState([]);
      for (let i = 0; i < allIntervals.length; i++) {
     clearInterval(allIntervals[i])
      }
+     setFuncOut(null)
+     setTimeOut(null)
      setAllIntervals([])
     } else {
       setTimeout(() => {
-        if (funcOut !== null) {
-          funcOut.func()
+        if (funcOutMob !== null) {
+          funcOutMob.func()
         }
       }, 2500);
     }
