@@ -152,9 +152,6 @@ function ProductSlider() {
       setTimeOut(null);
     } else if (touch === "touch end") {
       setTimeout(() => {
-        for (let i = 0; i < allIntervals.length; i++) {
-          clearInterval(allIntervals[i]);
-        }
         if (funcOutMob !== null) {
           funcOutMob.func("mobile");
         }
