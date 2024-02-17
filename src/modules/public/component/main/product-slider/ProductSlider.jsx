@@ -5,6 +5,7 @@ function ProductSlider() {
   const imagesRef = useRef();
   let conRef = useRef(true);
   const [allIntervals, setAllIntervals] = useState([]);
+  const [mobCon, setMobCon] = useState(false);
   const [funcOutMob, setFuncOutMob] = useState(null);
   const [conRight, setConRight] = useState(true);
   const [conLeft, setConLeft] = useState(false);
@@ -132,12 +133,12 @@ function ProductSlider() {
       if (conRight) {
         setTimeout(() => {
           clearInterval(timeOut);
-          funcRight();
+          funcRight(mobCon ? "mobile" : "");
         }, 500);
       } else {
         setTimeout(() => {
           clearInterval(timeOut);
-          funcLeft();
+          funcLeft(mobCon ? "mobile" : "");
         }, 500);
       }
     }
@@ -148,6 +149,7 @@ function ProductSlider() {
       for (let i = 0; i < allIntervals.length; i++) {
         clearInterval(allIntervals[i]);
       }
+      setMobCon(true)
       setFuncOut(null);
       setTimeOut(null);
     } else if (touch === "touch end") {
