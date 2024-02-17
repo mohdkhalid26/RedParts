@@ -4,9 +4,6 @@ import "./ProductSlider.scss";
 function ProductSlider() {
   const imagesRef = useRef();
   let conRef = useRef(true);
-  const [allIntervals, setAllIntervals] = useState([]);
-  const [mobCon, setMobCon] = useState(false);
-  const [funcOutMob, setFuncOutMob] = useState(null);
   const [conRight, setConRight] = useState(true);
   const [conLeft, setConLeft] = useState(false);
   const [timeOut, setTimeOut] = useState(null);
@@ -79,9 +76,7 @@ function ProductSlider() {
     getScrollMaxVal();
   }, []);
   function funcLeft(p) {
-    for (let i = 0; i < allIntervals.length; i++) {
-      clearInterval(allIntervals[i]);
-    }
+    
     let t = 40;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft <= 1) {
@@ -92,20 +87,12 @@ function ProductSlider() {
         imagesRef.current.scrollLeft -= 0.76;
       }
     }, t);
-    setAllIntervals([...allIntervals, time]);
-    setFuncOutMob({ func: funcLeft });
-    if (p === "mobile") {
-      setFuncOut(null);
-      setTimeOut(null);
-    } else {
       setFuncOut({ func: funcLeft });
       setTimeOut(time);
-    }
+    
   }
   function funcRight(p) {
-    for (let i = 0; i < allIntervals.length; i++) {
-      clearInterval(allIntervals[i]);
-    }
+  
     let t = 40;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft >= scrollVal - 1) {
@@ -117,15 +104,10 @@ function ProductSlider() {
       }
     }, t);
 
-    setAllIntervals([...allIntervals, time]);
-    setFuncOutMob({ func: funcRight });
-    if (p === "mobile") {
-      setFuncOut(null);
-      setTimeOut(null);
-    } else {
+   
       setFuncOut({ func: funcRight });
       setTimeOut(time);
-    }
+   
   }
   useEffect(() => {
     if (conRef.current) {
@@ -133,38 +115,20 @@ function ProductSlider() {
       if (conRight) {
         setTimeout(() => {
           clearInterval(timeOut);
-          funcRight(mobCon ? "mobile" : "");
+          funcRight();
         }, 500);
       } else {
         setTimeout(() => {
           clearInterval(timeOut);
-          funcLeft(mobCon ? "mobile" : "");
+          funcLeft();
         }, 500);
       }
     }
   }, [conLeft, conRight]);
 
-  function touchFunc(touch) {
-    if (touch === "touch start") {
-      for (let i = 0; i < allIntervals.length; i++) {
-        clearInterval(allIntervals[i]);
-      }
-      setMobCon(true)
-      setFuncOut(null);
-      setTimeOut(null);
-    } else if (touch === "touch end") {
-      setTimeout(() => {
-        if (funcOutMob !== null) {
-          funcOutMob.func("mobile");
-        }
-      }, 2500);
-    }
-  }
 
   return (
     <div
-      onTouchEnd={() => touchFunc("touch end")}
-      onTouchStart={() => touchFunc("touch start")}
       onMouseOver={() => (timeOut !== null ? clearInterval(timeOut) : "")}
       onMouseEnter={() => (timeOut !== null ? clearInterval(timeOut) : "")}
       onMouseLeave={() => (funcOut !== null ? funcOut.func() : "")}
@@ -189,3 +153,46 @@ function ProductSlider() {
 }
 
 export default ProductSlider;
+
+
+
+
+//////////////////////////////////////
+
+// onTouchEnd={() => touchFunc("touch end")}
+// onTouchStart={() => touchFunc("touch start")}
+
+// function touchFunc(touch) {
+//   if (touch === "touch start") {
+//     for (let i = 0; i < allIntervals.length; i++) {
+//       clearInterval(allIntervals[i]);
+//     }
+//     setMobCon(true)
+//     setFuncOut(null);
+//     setTimeOut(null);
+//   } else if (touch === "touch end") {
+//     setTimeout(() => {
+//       if (funcOutMob !== null) {
+//         funcOutMob.func("mobile");
+//       }
+//     }, 2500);
+//   }
+// }
+
+// setAllIntervals([...allIntervals, time]);
+// setFuncOutMob({ func: funcRight });
+
+// for (let i = 0; i < allIntervals.length; i++) {
+//     clearInterval(allIntervals[i]);
+//   }
+
+// setAllIntervals([...allIntervals, time]);
+//     setFuncOutMob({ func: funcLeft });
+    
+// for (let i = 0; i < allIntervals.length; i++) {
+    //   clearInterval(allIntervals[i]);
+    // }
+
+  // const [allIntervals, setAllIntervals] = useState([]);
+  // const [mobCon, setMobCon] = useState(false);
+  // const [funcOutMob, setFuncOutMob] = useState(null);
