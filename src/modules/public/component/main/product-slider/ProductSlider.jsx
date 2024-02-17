@@ -84,7 +84,7 @@ function ProductSlider() {
         setConLeft(false);
         setConRight(true);
       } else {
-        imagesRef.current.scrollLeft -= 0.76;
+        imagesRef.current.scrollLeft -= 0.81;
       }
     }, t);
       setFuncOut({ func: funcLeft });
