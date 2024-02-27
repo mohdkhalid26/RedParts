@@ -77,14 +77,14 @@ function ProductSlider() {
   }, []);
   function funcLeft(p) {
     
-    let t = 40;
+    let t = 2500;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft <= 1) {
         conRef.current = true;
         setConLeft(false);
         setConRight(true);
       } else {
-        imagesRef.current.scrollLeft -= 0.81;
+        imagesRef.current.scrollLeft -= 250;
       }
     }, t);
       setFuncOut({ func: funcLeft });
@@ -93,14 +93,14 @@ function ProductSlider() {
   }
   function funcRight(p) {
   
-    let t = 40;
+    let t = 2500;
     let time = setInterval(() => {
       if (imagesRef.current.scrollLeft >= scrollVal - 1) {
         conRef.current = true;
         setConLeft(true);
         setConRight(false);
       } else {
-        imagesRef.current.scrollLeft += 1;
+        imagesRef.current.scrollLeft += 250;
       }
     }, t);
 
@@ -116,12 +116,12 @@ function ProductSlider() {
         setTimeout(() => {
           clearInterval(timeOut);
           funcRight();
-        }, 500);
+        }, 25);
       } else {
         setTimeout(() => {
           clearInterval(timeOut);
           funcLeft();
-        }, 500);
+        }, 25);
       }
     }
   }, [conLeft, conRight]);
@@ -155,46 +155,3 @@ function ProductSlider() {
 }
 
 export default ProductSlider;
-
-
-
-
-//////////////////////////////////////
-
-// onTouchEnd={() => touchFunc("touch end")}
-// onTouchStart={() => touchFunc("touch start")}
-
-// function touchFunc(touch) {
-//   if (touch === "touch start") {
-//     for (let i = 0; i < allIntervals.length; i++) {
-//       clearInterval(allIntervals[i]);
-//     }
-//     setMobCon(true)
-//     setFuncOut(null);
-//     setTimeOut(null);
-//   } else if (touch === "touch end") {
-//     setTimeout(() => {
-//       if (funcOutMob !== null) {
-//         funcOutMob.func("mobile");
-//       }
-//     }, 2500);
-//   }
-// }
-
-// setAllIntervals([...allIntervals, time]);
-// setFuncOutMob({ func: funcRight });
-
-// for (let i = 0; i < allIntervals.length; i++) {
-//     clearInterval(allIntervals[i]);
-//   }
-
-// setAllIntervals([...allIntervals, time]);
-//     setFuncOutMob({ func: funcLeft });
-    
-// for (let i = 0; i < allIntervals.length; i++) {
-    //   clearInterval(allIntervals[i]);
-    // }
-
-  // const [allIntervals, setAllIntervals] = useState([]);
-  // const [mobCon, setMobCon] = useState(false);
-  // const [funcOutMob, setFuncOutMob] = useState(null);
